@@ -1,0 +1,23 @@
+﻿@model CategoriesViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class="container">
+        
+        <div class="row">
+            @Html.LabelFor(x => x.Name, "Adı", new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.Name, null, new { @class = "col-md-2" })
+            @Html.ValidationMessageFor(x => x.Name, null, new { @class = "col-md-2" })
+        </div>
+        <div class="row">
+            <button type="submit">Kaydet</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,30 @@
+﻿@model CategoriesUpdateViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            @Html.LabelFor(x => x.Id, null, new { @class = "col-md-2" })
+            <div class="col-md-2">
+                @Html.DisplayFor(x => x.Id)
+            </div>
+            @Html.HiddenFor(x => x.Id)
+        </div>
+        <div class="row">
+            @Html.LabelFor(x => x.Name, null, new { @class = "col-md-2" })
+            @Html.TextBoxFor(x => x.Name, null, new { @class = "col-md-2" })
+            @Html.ValidationMessageFor(x => x.Name, null, new { @class = "col-md-2" })
+        </div>
+        <div class="row">
+            <button type="submit">Kaydet</button>
+        </div>
+    </div>
+}
+
+
+
